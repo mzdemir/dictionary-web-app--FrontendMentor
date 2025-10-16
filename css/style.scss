@@ -1,0 +1,270 @@
+@use "utility";
+@use "custom-select";
+@use "theme-checkbox";
+
+.container {
+	$max-width: 736px;
+	$padding-inline-mobile: 1.5rem;
+	$padding-inline-desktop: 2.5rem;
+	$margin-block-mobile: 1.5rem;
+	$margin-block-desktop: 3.625rem;
+	inline-size: min($max-width, 100% - $padding-inline-mobile * 2); // 24px padding per side
+	margin: $margin-block-mobile auto; // 24px margin per side and auto horizontal
+	display: grid;
+	gap: 1.5rem;
+	color: var(--container-text-color);
+
+	@media (min-width: 768px) {
+		inline-size: min($max-width, 100% - $padding-inline-desktop * 2); // 40px padding per side
+		margin: $margin-block-desktop auto; // 58px margin per side
+		gap: 3.25rem;
+	}
+}
+
+.primary-nav {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.primary-nav .logo {
+	inline-size: 1.75rem;
+	block-size: 2rem;
+
+	@media (min-width: 768px) {
+		inline-size: 2rem;
+		block-size: 2.25rem;
+	}
+}
+
+.search-bar {
+	@include utility.heading-s;
+	font-weight: utility.$fw-bold;
+
+	background-color: var(--search-bar-bg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.875rem 1.5rem;
+	border-radius: 1rem;
+
+	&:hover {
+		border: 1px solid utility.$color-accent-purple;
+		cursor: pointer;
+	}
+
+	@media (min-width: 768px) {
+		padding: 1.25rem 1.5rem;
+	}
+}
+
+.search-input {
+	background-color: inherit;
+	border: none;
+	inline-size: 100%;
+
+	&::placeholder {
+		opacity: 25%;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.search-btn {
+	background: url("../assets/images/icon-search.svg") center no-repeat;
+	background-size: cover;
+	border: none;
+	inline-size: 1rem;
+	block-size: 1rem;
+	cursor: pointer;
+}
+
+.title-section {
+	display: flex;
+	justify-content: space-between;
+}
+
+.main-search-result {
+	display: grid;
+	gap: 2rem;
+
+	@media (min-width: 768px) {
+		gap: 2.5rem;
+	}
+}
+
+.word-container {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.main-title {
+	@include utility.heading-l;
+}
+
+.phonetic {
+	@include utility.body-m;
+	color: utility.$color-accent-purple;
+}
+
+.play-btn {
+	inline-size: 3rem;
+	block-size: 3rem;
+	background: url("../assets/images/icon-play.svg") center no-repeat;
+	background-size: cover;
+	border: none;
+	cursor: pointer;
+
+	@media (min-width: 768px) {
+		inline-size: 4.75rem;
+		block-size: 4.75rem;
+	}
+}
+
+.meaning {
+	position: relative;
+	display: grid;
+	gap: 2rem;
+
+	@media (min-width: 768px) {
+		gap: 2.5rem;
+	}
+}
+
+.secondary-heading {
+	@include utility.heading-m;
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+
+	&::after {
+		content: "";
+		flex: 1;
+		block-size: 1px;
+		background-color: utility.$color-neutral-300;
+	}
+
+	@media (min-width: 768px) {
+		gap: 2rem;
+	}
+}
+
+.description {
+	display: grid;
+	gap: 1rem;
+
+	@media (min-width: 768px) {
+		gap: 1.5rem;
+	}
+}
+
+.heading-3 {
+	@include utility.heading-s;
+	color: utility.$color-neutral-400;
+}
+
+.desc-list {
+	@include utility.body-sm;
+	padding-inline-start: 1rem;
+	display: grid;
+	gap: 0.75rem;
+
+	::marker {
+		color: utility.$color-accent-purple;
+	}
+
+	@media (min-width: 768px) {
+		padding-inline-start: 2.375rem;
+	}
+}
+
+.desc-list span {
+	display: block;
+	margin-block-start: 0.75rem;
+	color: utility.$color-neutral-400;
+}
+
+.synonyms {
+	@include utility.heading-s;
+	color: utility.$color-neutral-400;
+	display: flex;
+	gap: 1.5rem;
+}
+
+.synonyms .synonym-link {
+	color: utility.$color-accent-purple;
+	font-weight: utility.$fw-bold;
+	display: inline-block;
+
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.source {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	border-top: 1px solid utility.$color-neutral-300;
+	padding-top: 1.5rem;
+	font-size: utility.$fs-body-s;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		gap: 1.25rem;
+	}
+}
+
+.heading-4 {
+	@include utility.heading-s;
+	color: utility.$color-neutral-400;
+	text-decoration: 1px underline;
+	font-size: inherit;
+
+	@media (min-width: 768px) {
+		font-size: inherit;
+	}
+}
+
+.source-links {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.source-links a {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: underline;
+	font-size: inherit;
+	color: inherit;
+
+	&:hover {
+		color: utility.$color-neutral-800;
+	}
+}
+
+.empty-error {
+	@include utility.heading-s;
+	color: utility.$color-accent-red;
+}
+
+.no-def-msg {
+	@include utility.heading-s;
+	display: grid;
+	justify-items: center;
+	text-align: center;
+	gap: 1.5rem;
+	margin-block-start: 4rem;
+}
+
+.no-def-msg h1 {
+	font-weight: utility.$fw-bold;
+}
+
+.no-def-msg p {
+	color: utility.$color-neutral-400;
+}

@@ -1,0 +1,55 @@
+@use "utility";
+
+.font-select-container {
+	margin-inline-start: auto;
+	font-weight: utility.$fw-bold;
+	font-size: utility.$fs-body-m;
+	display: flex;
+	gap: 1rem;
+}
+
+select,
+::picker(select) {
+	appearance: base-select;
+}
+
+select {
+	border: none;
+	display: grid;
+	align-items: center;
+	cursor: pointer;
+
+	&::picker-icon {
+		display: none;
+	}
+
+	&::picker(select) {
+		border: none;
+		padding: 1.5rem 4.375rem 1.5rem 1.5rem;
+		border-radius: 1rem;
+		right: anchor(145%);
+		color: inherit;
+
+		margin-block-start: 10px;
+		box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	&:hover {
+		background: transparent;
+	}
+}
+
+.option-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+option::checkmark {
+	display: none;
+}
+
+option:hover {
+	background: transparent;
+	color: utility.$color-accent-purple;
+}
