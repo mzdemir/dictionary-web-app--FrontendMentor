@@ -2,46 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
-		<link rel="stylesheet" href="./css/style.css" />
-		<title>Frontend Mentor | Dictionary web app</title>
+		<title>Frontend Mentor | Dictionary Web App</title>
 	</head>
 	<body>
-		<div class="container sans-serif">
-			<header>
-				<nav class="primary-nav" aria-label="primary navigation">
-					<img class="logo" src="./assets/images/logo.svg" alt="Dictionary logo" />
-					<label class="font-select-container" aria-label="Choose font style">
-						<select aria-live="polite">
-							<div class="option-container">
-								<option value="sans-serif">Sans Serif</option>
-								<option value="serif">Serif</option>
-								<option value="mono">Mono</option>
-							</div>
-						</select>
-						<img src="./assets/images/icon-arrow-down.svg" alt="" aria-hidden="true" />
-					</label>
-
-					<div class="theme-toggle" role="group" aria-label="Theme toggle">
-						<label class="checkbox-label" aria-label="Toggle dark mode">
-							<input type="checkbox" id="color-scheme" />
-						</label>
-						<img class="theme-icon" src="./assets/images/icon-moon.svg" alt="" />
-					</div>
-				</nav>
-			</header>
-
-			<form class="search-bar" role="search" aria-label="Search for a word">
-				<label aria-label="Search for any word…">
-					<input class="search-input" type="text" value="keyboard" placeholder="Search for any word…" />
-				</label>
-				<button class="search-btn" type="submit" aria-label="Search button"></button>
-			</form>
-
-			<main class="main-search-result" aria-live="assertive"></main>
-		</div>
-		<script type="module" src="index.js"></script>
+		<div id="root"></div>
+		<script type="module" src="/src/main.jsx"></script>
 	</body>
 </html>

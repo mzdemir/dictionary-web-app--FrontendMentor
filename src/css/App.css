@@ -1,0 +1,43 @@
+/* :root {
+	--container-text-color: #{$color-neutral-600};
+	--search-bar-bg: #{$color-neutral-200};
+	--color-scheme: light;
+	color-scheme: var(--color-scheme);
+
+	@media (prefers-color-scheme: dark) {
+		--container-text-color: #{$color-neutral-100};
+		--search-bar-bg: #{$color-neutral-700};
+		--color-scheme: dark;
+	}
+}
+
+:root:has(#color-scheme:checked) {
+	--container-text-color: #{$color-neutral-100};
+	--search-bar-bg: #{$color-neutral-700};
+	--color-scheme: dark;
+}
+
+:root:has(#color-scheme:not(:checked)) {
+	--color-scheme: light;
+	--container-text-color: #{$color-neutral-600};
+	--search-bar-bg: #{$color-neutral-200};
+} */
+
+/* Styles */
+#root {
+	--max-width: 736px;
+	--padding-inline-mobile: 1.5rem;
+	--padding-inline-desktop: 2.5rem;
+	--margin-block-mobile: 1.5rem;
+	--margin-block-desktop: 3.625rem;
+	inline-size: min(var(--max-width), 100% - var(--padding-inline-mobile) * 2); /* 24px padding per side */
+	margin: var(--margin-block-mobile) auto; /* 24px margin per side and auto horizontal */
+	display: grid;
+	gap: 1.5rem;
+
+	@media (min-width: 768px) {
+		inline-size: min(var(--max-width), 100% - var(--padding-inline-desktop) * 2); /* 40px padding per side */
+		margin: var(--margin-block-desktop) auto; /* 58px margin per side */
+		gap: 3.25rem;
+	}
+}

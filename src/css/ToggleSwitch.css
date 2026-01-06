@@ -1,4 +1,4 @@
-@use "utility";
+/* @use "utility"; */
 
 .theme-toggle {
 	position: relative;
@@ -12,10 +12,15 @@
 		inline-size: 1px;
 		block-size: 2rem;
 		left: -1rem;
-		background-color: utility.$color-neutral-300;
+		/* background-color: utility.$color-neutral-300; */
+		background-color: grey;
 	}
 }
 
+.theme-icon {
+	height: 20px;
+	width: 20px;
+}
 .checkbox-label {
 	display: inline-block;
 	line-height: 0;
@@ -25,7 +30,8 @@ input[type="checkbox"] {
 	appearance: none;
 	inline-size: 2.5rem;
 	block-size: 1.25rem;
-	background-color: utility.$color-neutral-400;
+	/* background-color: utility.$color-neutral-400; */
+	background-color: hotpink;
 	border-radius: 999px;
 	outline: none;
 	position: relative;
@@ -43,14 +49,16 @@ input[type="checkbox"]::before {
 	content: "";
 	inline-size: 0.875rem;
 	block-size: 0.875rem;
-	background-color: utility.$color-neutral-100;
+	/* background-color: utility.$color-neutral-100; */
+	background-color: aqua;
 	border-radius: 999px;
 	position: absolute;
 	inset: 3px;
 }
 
 input[type="checkbox"]:checked {
-	background-color: utility.$color-accent-purple;
+	/* background-color: utility.$color-accent-purple; */
+	background-color: hotpink;
 
 	&:hover {
 		cursor: pointer;
