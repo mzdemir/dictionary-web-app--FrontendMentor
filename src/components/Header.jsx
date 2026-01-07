@@ -8,16 +8,10 @@ export default function Header() {
 	return (
 		<header>
 			<nav className="primary-nav" aria-label="primary navigation">
-				<img src={logo} alt="Dictionary logo" />
+				<img className="logo" src={logo} alt="Dictionary logo" />
 				<SelectDropdown />
 				<ToggleSwitch />
 			</nav>
 		</header>
 	)
 }
-
-// <header>
-// 	<nav className="primary-nav" aria-label="primary navigation">
-
-// 	</nav>
-// </header>

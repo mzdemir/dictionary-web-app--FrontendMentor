@@ -3,3 +3,13 @@
 	align-items: center;
 	gap: 2rem;
 }
+
+.primary-nav .logo {
+	inline-size: 1.75rem;
+	block-size: 2rem;
+
+	@media (min-width: 768px) {
+		inline-size: 2rem;
+		block-size: 2.25rem;
+	}
+}

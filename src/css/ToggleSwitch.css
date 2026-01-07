@@ -1,26 +1,19 @@
-/* @use "utility"; */
-
 .theme-toggle {
 	position: relative;
 	display: flex;
-	gap: 0.75rem;
 	align-items: center;
-
-	&::before {
-		content: "";
-		position: absolute;
-		inline-size: 1px;
-		block-size: 2rem;
-		left: -1rem;
-		/* background-color: utility.$color-neutral-300; */
-		background-color: grey;
-	}
+	gap: 0.75rem;
 }
 
-.theme-icon {
-	height: 20px;
-	width: 20px;
+.theme-toggle::before {
+	content: "";
+	position: absolute;
+	inline-size: 1px;
+	block-size: 2rem;
+	left: -1rem;
+	background-color: var(--neutral-300);
 }
+
 .checkbox-label {
 	display: inline-block;
 	line-height: 0;
@@ -30,41 +23,49 @@ input[type="checkbox"] {
 	appearance: none;
 	inline-size: 2.5rem;
 	block-size: 1.25rem;
-	/* background-color: utility.$color-neutral-400; */
-	background-color: hotpink;
+	background-color: var(--neutral-400);
 	border-radius: 999px;
 	outline: none;
 	position: relative;
+	transition: background-color 200ms ease;
+}
 
-	&:hover {
-		cursor: pointer;
-	}
+input[type="checkbox"]:hover {
+	cursor: pointer;
+}
 
-	&:focus-visible {
-		outline: none;
-	}
+input[type="checkbox"]:focus-visible {
+	outline: none;
 }
 
 input[type="checkbox"]::before {
 	content: "";
 	inline-size: 0.875rem;
 	block-size: 0.875rem;
-	/* background-color: utility.$color-neutral-100; */
-	background-color: aqua;
+	background-color: var(--neutral-100);
 	border-radius: 999px;
 	position: absolute;
-	inset: 3px;
+	inset: 3.2px;
+	transition: transform 200ms ease, background-color 200ms ease;
 }
 
 input[type="checkbox"]:checked {
-	/* background-color: utility.$color-accent-purple; */
-	background-color: hotpink;
+	background-color: var(--accent-purple);
+}
 
-	&:hover {
-		cursor: pointer;
-	}
+input[type="checkbox"]:checked:hover {
+	cursor: pointer;
 }
 
 input[type="checkbox"]:checked::before {
 	transform: translateX(1.25rem);
+}
+
+.moon-icon {
+	stroke: var(--neutral-400);
+	transition: stroke 200ms ease;
+}
+
+html[data-darkMode="dark"] .moon-icon {
+	stroke: var(--accent-purple);
 }
