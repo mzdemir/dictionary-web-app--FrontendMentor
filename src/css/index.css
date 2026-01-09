@@ -20,26 +20,27 @@
 
 	/* Sizes */
 	--fs-heading-l: 4rem;
-	--lh-heading-l: 4.8rem;
+	--fs-heading-l-mobile: 2rem;
 
 	--fs-heading-m: 1.5rem;
-	--lh-heading-m: 1.8rem;
 
 	--fs-heading-s: 1.25rem;
-	--lh-heading-s: 1.5rem;
+	--fs-heading-s-mobile: 1rem;
 
 	--fs-body-m: 1.125rem;
-	--lh-body-m: 1.5rem;
 
 	--fs-body-s: 0.875rem;
-	--lh-body-s: 1.1rem;
+	--lh-body-s: 1.5rem;
 
 	--fw-bold: 700;
 	--fw-regular: 400;
 
+	--fs-italic: italic;
+
 	/* Default Light Theme */
 	--bg-page: var(--neutral-100);
 	--bg-input: var(--neutral-200);
+	--bg-surface: var(--neutral-100);
 
 	--text-primary: var(--neutral-600);
 	--text-accent: var(--accent-purple);
@@ -55,8 +56,8 @@
 /* Dark Theme */
 :root[data-darkMode="dark"] {
 	--bg-page: var(--neutral-800);
-	--bg-surface: var(--neutral-700);
 	--bg-input: var(--neutral-700);
+	--bg-surface: var(--neutral-700);
 
 	--text-primary: var(--neutral-100);
 }
@@ -98,4 +99,40 @@ html[data-font="Mono"] {
 button {
 	border: none;
 	background: none;
+}
+
+.heading-l {
+	font-size: var(--fs-heading-l-mobile);
+	font-weight: var(--fw-bold);
+}
+
+.heading-m {
+	font-size: var(--fs-body-m);
+}
+
+.heading-s {
+	font-size: var(--fs-heading-s-mobile);
+}
+
+.body-s {
+	font-size: var(--fs-body-s);
+	line-height: var(--lh-body-s);
+}
+
+@media (min-width: 768px) {
+	.heading-l {
+		font-size: var(--fs-heading-l);
+	}
+
+	.heading-m {
+		font-size: var(--fs-heading-m);
+	}
+
+	.heading-s {
+		font-size: var(--fs-heading-s);
+	}
+
+	.body-s {
+		font-size: var(--fs-body-m);
+	}
 }

@@ -1,37 +1,19 @@
-import {} from "react"
 import "../css/SearchBar.css"
+import {useState, useEffect} from "react"
 
-import {useEffect, useRef} from "react"
+export default function SearchBar({searchedKeyword, setSearchedKeyword, setQueryData}) {
+	const [inputValue, setInputValue] = useState(searchedKeyword)
 
-export default function SearchBar({setqueryData}) {
-	const inputRef = useRef(null)
-
-	// Fetching data with a default value to pre-populate the app. Runs once
+	// keep input in sync when synonym is clicked
 	useEffect(() => {
-		async function fetchInitialWord() {
-			const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/keyboard`)
-			const data = await res.json()
-			setqueryData(data)
-		}
-		fetchInitialWord()
-	}, [setqueryData])
+		setInputValue(searchedKeyword)
+	}, [searchedKeyword])
 
-	// Fetching with user-entered value
-	async function handleSubmit(event) {
+	function handleSubmit(event) {
 		event.preventDefault()
 
-		const searchKeyword = inputRef.current.value.trim()
-		if (searchKeyword === "") {
-			return setqueryData("")
-		} else {
-			const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchKeyword}`)
-			const data = await res.json()
-			if (!res.ok) {
-				setqueryData(data)
-				return
-			}
-			setqueryData(data)
-		}
+		const query = inputValue.trim()
+		query === "" ? setQueryData("") : setSearchedKeyword(query)
 	}
 
 	return (
@@ -42,11 +24,11 @@ export default function SearchBar({setqueryData}) {
 					className="search-input"
 					name="search-query"
 					placeholder="Search for any word…"
-					defaultValue="keyboard"
-					ref={inputRef}
+					value={inputValue}
+					onChange={(e) => setInputValue(e.target.value)}
 				/>
 			</label>
-			<button className="search-btn" type="submit" aria-label="Search button"></button>
+			<button className="search-btn" type="submit" aria-label="Search button" />
 		</form>
 	)
 }

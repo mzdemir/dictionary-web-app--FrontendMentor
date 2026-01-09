@@ -7,10 +7,6 @@
 
 	background-color: var(--bg-input);
 	font-weight: var(--fw-bold);
-
-	@media (min-width: 768px) {
-		padding: 1.25rem 1.5rem;
-	}
 }
 
 .search-bar:hover {
@@ -39,4 +35,10 @@
 	inline-size: 1rem;
 	block-size: 1rem;
 	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.search-bar {
+		padding: 1.25rem 1.5rem;
+	}
 }

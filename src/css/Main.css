@@ -1,15 +1,12 @@
 .main-search-result {
 	display: grid;
 	gap: 2rem;
-
-	@media (min-width: 768px) {
-		gap: 2.5rem;
-	}
 }
 
 .title-section {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .word-container {
@@ -17,79 +14,48 @@
 	gap: 0.5rem;
 }
 
-.main-title {
-	font-weight: var(--fw-bold);
-}
-
 .phonetic {
 	color: var(--accent-purple);
-}
-
-.play-btn {
-	inline-size: 3rem;
-	block-size: 3rem;
-	background: url("../assets/icon-play.svg") center no-repeat;
-	background-size: cover;
-	border: none;
-	cursor: pointer;
-
-	@media (min-width: 768px) {
-		inline-size: 4.75rem;
-		block-size: 4.75rem;
-	}
 }
 
 .meaning {
 	position: relative;
 	display: grid;
 	gap: 2rem;
-
-	@media (min-width: 768px) {
-		gap: 2.5rem;
-	}
 }
 
 .secondary-heading {
-	/* @include utility.heading-m; */
 	display: flex;
 	align-items: center;
 	gap: 1.25rem;
+	font-weight: var(--fw-bold);
+	font-style: var(--fs-italic);
+}
 
-	&::after {
-		content: "";
-		flex: 1;
-		block-size: 1px;
-		background-color: var(--neutral-300);
-	}
+.secondary-heading::after {
+	content: "";
+	flex: 1;
+	block-size: 1px;
+	background-color: var(--neutral-300);
+}
 
-	@media (min-width: 768px) {
-		gap: 2rem;
-	}
+html[data-darkMode="dark"] .secondary-heading::after {
+	background-color: var(--neutral-500);
 }
 
 .description {
 	display: grid;
 	gap: 1rem;
-
-	@media (min-width: 768px) {
-		gap: 1.5rem;
-	}
 }
 
 .heading-3 {
-	/* @include utility.heading-s; */
 	color: var(--neutral-400);
 }
 
 .desc-list {
-	/* @include utility.body-sm; */
 	padding-inline-start: 1rem;
 	display: grid;
 	gap: 0.75rem;
-
-	@media (min-width: 768px) {
-		padding-inline-start: 2.375rem;
-	}
 }
 
 ::marker {
@@ -103,19 +69,22 @@
 }
 
 .synonyms {
-	/* @include utility.heading-s; */
-	color: var(--neutral-400);
 	display: flex;
 	gap: 1.5rem;
 }
 
-.synonyms .synonym-link {
-	color: var(--accent-purple);
-	font-weight: var(--fw-bold);
-	display: inline-block;
+.synonym-links {
+	display: flex;
+	gap: 0.25rem;
+	flex-wrap: wrap;
 }
 
-.synonyms .synonym-link:hover {
+.synonym-link {
+	color: var(--accent-purple);
+	font-weight: var(--fw-bold);
+}
+
+.synonym-link:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -126,23 +95,13 @@
 	gap: 0.5rem;
 	border-top: 1px solid var(--eutral-300);
 	padding-top: 1.5rem;
-	/* font-size: utility.$fs-body-s; */
-
-	@media (min-width: 768px) {
-		flex-direction: row;
-		gap: 1.25rem;
-	}
+	font-size: var(--fs-body-s);
 }
 
 .heading-4 {
-	/* @include utility.heading-s; */
 	color: var(--neutral-400);
 	text-decoration: 1px underline;
 	font-size: inherit;
-
-	@media (min-width: 768px) {
-		font-size: inherit;
-	}
 }
 
 .source-links {
@@ -160,16 +119,14 @@
 }
 
 .source-links a:hover {
-	color: var(--neutral-800);
+	color: var(--accent-purple);
 }
 
 .empty-error {
-	/* @include utility.heading-s; */
 	color: var(--accent-red);
 }
 
 .no-def-msg {
-	/* @include utility.heading-s; */
 	display: grid;
 	justify-items: center;
 	text-align: center;
@@ -183,4 +140,35 @@
 
 .no-def-msg p {
 	color: var(--neutral-400);
+}
+
+@media (min-width: 768px) {
+	.main-search-result {
+		gap: 2.5rem;
+	}
+
+	.meaning {
+		gap: 2.5rem;
+	}
+
+	.secondary-heading {
+		gap: 2rem;
+	}
+
+	.description {
+		gap: 1.5rem;
+	}
+
+	.desc-list {
+		padding-inline-start: 2.375rem;
+	}
+
+	.source {
+		flex-direction: row;
+		gap: 1.25rem;
+	}
+
+	.heading-4 {
+		font-size: inherit;
+	}
 }
