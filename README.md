@@ -1,16 +1,65 @@
-# React + Vite
+# Frontend Mentor - Dictionary web app solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Dictionary web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-Currently, two official plugins are available:
+### The challenge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Users should be able to:
 
-## React Compiler
+- Search for words using the input field
+- See the Free Dictionary API's response for the searched word
+- See a form validation message when trying to submit a blank form
+- Play the audio file for a word when it's available
+- Switch between serif, sans serif, and monospace fonts
+- Switch between light and dark themes
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Screenshot
 
-## Expanding the ESLint configuration
+<table>
+  <tr>
+    <td><img src="./Screenshots/desktop-light-preview.png" alt=""></td>
+    <td><img src="./Screenshots/desktop-dark-preview.png" alt=""></td>
+  </tr>
+  <tr>
+    <td><img src="./Screenshots/mobile-light-preview.png" alt=""></td>
+    <td><img src="./Screenshots/mobile-dark-preview.png" alt=""></td>
+ 
+  </tr>
+</table>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Links
+
+- Solution URL:
+- Live Site URL:
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+- Fetch API
+- Semantic HTML5
+- CSS custom properties (CSS variables)
+- Mobile-first workflow
+- Accessible custom UI components (custom select / dropdown)
+
+### What I learned
+
+This project helped reinforce several core React and frontend concepts:
+
+- Managing form state and validation in React without overcomplicating logic
+- Conditionally applying class names based on state (e.g. empty input feedback)
+- Building an accessible custom dropdown using native buttons and ARIA attributes
+- I prefered to build custom components without using any library like styled components
+- Fetching and handling API responses, including error and empty states
+- Prioritizing accessibility (keyboard navigation, focus states, ARIA roles)
+
+### Useful resources
+
+- https://dictionaryapi.dev/ – Free Dictionary API used in this project
+
+## Author
+
+- Githup - [Mzdemir](https://github.com/mzdemir)
+- Frontend Mentor - [@mzdemir](https://www.frontendmentor.io/profile/mzdemir)

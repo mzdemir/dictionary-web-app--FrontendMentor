@@ -82,11 +82,11 @@ html[data-darkMode="dark"] .secondary-heading::after {
 .synonym-link {
 	color: var(--accent-purple);
 	font-weight: var(--fw-bold);
+	cursor: pointer;
 }
 
 .synonym-link:hover {
 	text-decoration: underline;
-	cursor: pointer;
 }
 
 .source {
@@ -120,6 +120,10 @@ html[data-darkMode="dark"] .secondary-heading::after {
 
 .source-links a:hover {
 	color: var(--accent-purple);
+}
+
+.new-window {
+	inline-size: 0.75rem;
 }
 
 .empty-error {

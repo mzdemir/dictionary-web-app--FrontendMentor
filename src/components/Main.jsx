@@ -7,9 +7,9 @@ export default function Main({queryData, setSearchedKeyword}) {
 	return (
 		// prettier-ignore
 		queryData === ""
-    ? <p className="empty-error heading-s">Whoops, can't be empty…</p>
+    ? <p className="empty-error heading-s" aria-live="assertive">Whoops, can't be empty…</p>
     : queryData && ("title" in queryData)
-    ? <article className="no-def-msg">
+    ? <article className="no-def-msg" aria-live="assertive">
 			  <img src={sadEmoji} alt="" aria-hidden="true"/>
 				<h1 className="heading-s">{queryData.title}</h1>
 				<p className="body-s">{queryData.message} {queryData.resolution}</p>
@@ -41,7 +41,7 @@ export default function Main({queryData, setSearchedKeyword}) {
           ? <div className="synonyms heading-s">
               <h3 className="heading-3 ">Synonyms</h3> 
               <div className="synonym-links">{meaning.synonyms.map((syn, index) => 
-                <a onClick={() => setSearchedKeyword(syn)} className="synonym-link" key={index}>{syn}</a>)}
+                <button onClick={() => setSearchedKeyword(syn)} className="synonym-link" key={index}>{syn}</button>)}
               </div>
             </div>
           : null}

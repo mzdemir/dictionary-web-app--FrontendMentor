@@ -46,17 +46,22 @@ export default function SelectDropdown() {
 
 	return (
 		<div className="custom-select" ref={selectDropdownEl}>
-			<button className="select-btn" aria-haspopup="listbox" onClick={toggleDropdown}>
+			<button
+				className="select-btn"
+				onClick={toggleDropdown}
+				aria-haspopup="menu"
+				aria-expanded={isOpen}
+				aria-controls="dropdown">
 				{selectedFont}
 				<img src={arrowDown} alt="" />
 			</button>
 			{isOpen ? (
 				// prettier-ignore
-				<ul className="option-container" role="listbox">
-					<li role="option" onClick={() => selectFont("Sans Serif")}>Sans Serif</li>
-					<li role="option" onClick={() => selectFont("Serif")}>Serif</li>
-					<li role="option" onClick={() => selectFont("Mono")}>Mono</li>
-        </ul>
+				<div className="option-container" id="dropdown" role="menu">
+					<button role="menuitem" onClick={() => selectFont("Sans Serif")}>Sans Serif</button>
+					<button role="menuitem" onClick={() => selectFont("Serif")}>Serif</button>
+					<button role="menuitem" onClick={() => selectFont("Mono")}>Mono</button>
+        </div>
 			) : null}
 		</div>
 	)

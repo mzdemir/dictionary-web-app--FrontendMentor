@@ -38,10 +38,12 @@ html[data-darkMode="dark"] .option-container:hover {
 	box-shadow: 0 5px 30px 0 var(--active);
 }
 
-.option-container li {
+.option-container button {
 	cursor: pointer;
+	text-align: left;
 }
 
-.option-container li:hover {
+.option-container button:hover,
+.option-container button:focus-visible {
 	color: var(--accent-purple);
 }
