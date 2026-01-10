@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://www.frontendmentor.io/solutions/mzdemir-dictionary-web-app-with-react-Vu-lJTCyQ6
+- Live Site URL: https://mzdemir-dictionary-web-app.netlify.app/
 
 ### Built with
 
